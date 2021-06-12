@@ -1,0 +1,41 @@
+<p>register works!</p>
+
+<form [formGroup]="registerForm" class="example-form">
+    <div>
+        <mat-form-field class="example-full-width" appearance="standard">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName">
+            <mat-error *ngIf="registerForm.controls.firstName.hasError('required')">required</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="example-full-width" appearance="standard">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName">
+            <mat-error *ngIf="registerForm.controls.lastName.hasError('required')">required</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field appearance="standard">
+            <mat-label>DOB</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="dateOfBirth">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="example-full-width" appearance="standard">
+            <mat-label>Mobile Number</mat-label>
+            <input matInput formControlName="mobileNumber">
+            <mat-error *ngIf="registerForm.controls.mobileNumber.hasError('required')">required</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field class="example-full-width" appearance="standard">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password">
+        </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" [disabled]="registerForm.invalid" (click)="Register()">Register</button>
+    <button mat-raised-button color="primary" routerLink="/login">Back</button>
+</form>
