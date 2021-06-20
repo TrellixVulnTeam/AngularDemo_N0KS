@@ -18,5 +18,4 @@ export class CarasoulExampleComponent implements OnInit {
       imageUrls: ["assets/photos/1.jpg", "assets/photos/2.jpg", "assets/photos/3.jpg"]
     };
   }
-
 }
